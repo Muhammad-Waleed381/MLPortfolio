@@ -16,10 +16,11 @@ const config: Config = {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			colors: {
-				paper: "var(--paper)",
-				ink: "var(--ink)",
-				electric: "var(--electric)",
-				safety: "var(--safety)",
+				mono: {
+					black: "#000000",
+					white: "#f7f7f2",
+					gray: "#bfbfbf"
+				},
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
   			card: {

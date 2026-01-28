@@ -18,8 +18,5 @@
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
-  "registries": {
-    "magic-ui": "https://magicui.design/registry.json",
-    "aceternity": "https://ui.aceternity.com/registry.json"
-  }
+  "registries": {}
 }
