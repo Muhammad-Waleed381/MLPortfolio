@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "project": {
+    "name": "paperfolio",
+    "framework": "nextjs",
+    "styling": "tailwind",
+    "typescript": true
+  },
+  "components": {
+    "path": "components/ui",
+    "style": "default",
+    "rsc": true
+  },
+  "registries": {
+    "shadcn": "https://ui.shadcn.com/registry.json",
+    "magic-ui": "https://magicui.design/registry.json",
+    "aceternity": "https://ui.aceternity.com/registry.json"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "$schema": "https://ui.shadcn.com/registry.schema.json",
+  "name": "paperfolio",
+  "homepage": "https://example.com",
+  "description": "Local registry for Paperfolio MCP components.",
+  "items": []
+}
