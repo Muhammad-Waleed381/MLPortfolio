@@ -1,7 +1,7 @@
 # Plan.md: MCP-Driven "Paperfolio" ML Portfolio
 
 ## 1. Project Vision
-Build a high-performance, visually striking personal portfolio for **FATBOY**, an ML Engineer. The aesthetic is **"Paperfolio"**: a high-contrast, Neobrutalist, tactile scrapbook style that feels like physical paper and ink, powered by modern motion and component systems.
+Build a high-performance, visually striking personal portfolio for **Muhammad Waleed**, an ML Engineer. The aesthetic is **"Paperfolio"**: a high-contrast, Neobrutalist, tactile scrapbook style that feels like physical paper and ink, powered by modern motion and component systems.
 
 * **Primary Palette:** Manila Paper (`#F4F1EA`), Ink Black (`#000000`), Pure White (`#FFFFFF`).
 * **Accent Colors:** Electric Blue (`#2563EB`) and Safety Orange (`#FF2E63`).

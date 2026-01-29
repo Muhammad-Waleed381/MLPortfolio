@@ -11,7 +11,7 @@ export function SystemsShowcase() {
   const rightRef = useRef<HTMLDivElement>(null)
 
   return (
-    <section className="glass-card mt-16 overflow-hidden px-8 py-10" ref={containerRef}>
+    <section className="mt-12" ref={containerRef}>
       <div className="flex flex-col gap-8">
         <div className="flex items-center justify-between">
           <h2 className="font-display text-3xl font-semibold text-black">
@@ -25,14 +25,19 @@ export function SystemsShowcase() {
         <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center">
           <div
             ref={leftRef}
-            className="glass-card flex h-24 w-full items-center justify-center font-mono text-xs uppercase tracking-[0.2em] text-black/70 lg:w-52"
+            className="flex h-24 w-full items-center justify-center rounded-3xl border border-black/10 bg-white/80 font-mono text-xs uppercase tracking-[0.2em] text-black/70 lg:w-52"
           >
             Low-level Core
           </div>
 
-          <div className="relative flex h-64 flex-1 items-center justify-center">
+          <div className="relative flex h-64 flex-1 items-center justify-center md:h-72">
             <div className="absolute inset-0">
-              <OrbitingCircles radius={80} iconSize={40} speed={1.2}>
+              <OrbitingCircles
+                radius={64}
+                iconSize={32}
+                speed={1.2}
+                className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:[--radius:80] md:[--icon-size:40px]"
+              >
                 <span className="flex size-10 items-center justify-center rounded-full border border-black/30 bg-white font-mono text-[10px] uppercase tracking-[0.2em] text-black">
                   C
                 </span>
@@ -43,7 +48,12 @@ export function SystemsShowcase() {
                   RISC-V
                 </span>
               </OrbitingCircles>
-              <OrbitingCircles radius={140} iconSize={44} speed={0.9}>
+              <OrbitingCircles
+                radius={110}
+                iconSize={36}
+                speed={0.9}
+                className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:[--radius:140] md:[--icon-size:44px]"
+              >
                 <span className="flex size-11 items-center justify-center rounded-full border border-black/20 bg-white font-mono text-[10px] uppercase tracking-[0.2em] text-black">
                   CUDA
                 </span>
@@ -54,7 +64,12 @@ export function SystemsShowcase() {
                   Linux
                 </span>
               </OrbitingCircles>
-              <OrbitingCircles radius={190} iconSize={46} speed={0.8}>
+              <OrbitingCircles
+                radius={150}
+                iconSize={38}
+                speed={0.8}
+                className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:[--radius:190] md:[--icon-size:46px]"
+              >
                 <span className="flex size-12 items-center justify-center rounded-full border border-black/15 bg-white font-mono text-[10px] uppercase tracking-[0.2em] text-black">
                   Py
                 </span>
@@ -70,7 +85,7 @@ export function SystemsShowcase() {
 
           <div
             ref={rightRef}
-            className="glass-card flex h-24 w-full items-center justify-center font-mono text-xs uppercase tracking-[0.2em] text-black/70 lg:w-52"
+            className="flex h-24 w-full items-center justify-center rounded-3xl border border-black/10 bg-white/80 font-mono text-xs uppercase tracking-[0.2em] text-black/70 lg:w-52"
           >
             Model Stack
           </div>

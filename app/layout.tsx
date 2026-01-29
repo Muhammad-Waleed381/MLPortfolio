@@ -22,7 +22,7 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FATBOY — ML Portfolio",
+  title: "Muhammad Waleed — ML Portfolio",
   description: "Monochrome ML portfolio with parallax motion."
 };
 
