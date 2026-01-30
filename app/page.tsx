@@ -15,6 +15,7 @@ import {
   IconBrandLinkedin,
   IconMail,
   IconMapPin,
+  IconFileText,
 } from "@tabler/icons-react"
 
 
@@ -167,9 +168,14 @@ export default function Home() {
                     icon: <IconMail />,
                   },
                   {
+                    title: "Resume",
+                    href: "/Resume.pdf",
+                    icon: <IconFileText className="text-neutral-500 dark:text-neutral-300" />,
+                  },
+                  {
                     title: "Location",
                     href: "#",
-                    icon: <IconMapPin />,
+                    icon: <IconMapPin className="text-neutral-500 dark:text-neutral-300" />,
                   },
                 ]}
                 desktopClassName="bg-white border border-black/10 shadow-[0_18px_40px_rgba(0,0,0,0.12)]"

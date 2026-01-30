@@ -23,7 +23,10 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "Muhammad Waleed — ML Portfolio",
-  description: "Monochrome ML portfolio with parallax motion."
+  description: "Monochrome ML portfolio with parallax motion.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
