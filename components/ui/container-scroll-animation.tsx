@@ -24,7 +24,7 @@ export const ContainerScroll = ({
     target: containerRef,
   });
   const smoothScrollYProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
+    stiffness: 200,
     damping: 30,
     restDelta: 0.001,
   });

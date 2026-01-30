@@ -13,11 +13,11 @@ export const TextReveal: FC<TextRevealProps> = ({ children, className }) => {
   const targetRef = useRef<HTMLDivElement | null>(null)
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start 0.9", "end 0.1"],
+    offset: ["start 0.9", "start 0.5"],
   })
 
   const smoothScrollYProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
+    stiffness: 200,
     damping: 30,
     restDelta: 0.001,
   })

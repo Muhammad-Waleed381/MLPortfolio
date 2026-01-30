@@ -72,7 +72,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.3 }}
                 className="font-display text-2xl font-semibold text-black"
               >
                 {item.title}
@@ -84,7 +84,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.3 }}
                 className="mt-6 max-w-sm font-mono text-xs uppercase tracking-[0.2em] text-black/60"
               >
                 {item.description}

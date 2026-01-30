@@ -34,7 +34,7 @@ export const WobbleCard = ({
         transform: isHovering
           ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0) scale3d(1, 1, 1)`
           : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
-        transition: "transform 0.2s ease-out",
+        transition: "transform 0.1s ease-out",
       }}
       className={cn(
         "mx-auto w-full relative rounded-3xl overflow-hidden border border-black/10 bg-white",
@@ -53,7 +53,7 @@ export const WobbleCard = ({
             transform: isHovering
               ? `translate3d(${-mousePosition.x}px, ${-mousePosition.y}px, 0) scale3d(1.03, 1.03, 1)`
               : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
-            transition: "transform 0.2s ease-out",
+            transition: "transform 0.1s ease-out",
           }}
           className={cn("h-full px-6 py-10", className)}
         >
