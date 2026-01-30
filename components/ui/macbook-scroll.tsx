@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { MotionValue, motion, useScroll, useTransform } from "motion/react";
+import { MotionValue, motion, useScroll, useTransform, useSpring } from "motion/react";
 import { cn } from "@/lib/utils";
 import {
   IconBrightnessDown,
@@ -41,6 +41,12 @@ export const MacbookScroll = ({
     offset: ["start start", "end start"],
   });
 
+  const smoothScrollYProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -50,19 +56,19 @@ export const MacbookScroll = ({
   }, []);
 
   const scaleX = useTransform(
-    scrollYProgress,
+    smoothScrollYProgress,
     [0, 0.5],
     [1.2, isMobile ? 1 : 1.5],
   );
   const scaleY = useTransform(
-    scrollYProgress,
+    smoothScrollYProgress,
     [0, 0.5],
     [0.6, isMobile ? 1 : 1.5],
   );
-  const translate = useTransform(scrollYProgress, [0, 1], [0, 1500]);
-  const rotate = useTransform(scrollYProgress, [0.15, 0.18, 0.5], [-28, -28, 0]);
-  const textTransform = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+  const translate = useTransform(smoothScrollYProgress, [0, 1], [0, 1500]);
+  const rotate = useTransform(smoothScrollYProgress, [0.15, 0.18, 0.5], [-28, -28, 0]);
+  const textTransform = useTransform(smoothScrollYProgress, [0, 0.5], [0, 100]);
+  const textOpacity = useTransform(smoothScrollYProgress, [0, 0.3], [1, 0]);
 
   return (
     <div

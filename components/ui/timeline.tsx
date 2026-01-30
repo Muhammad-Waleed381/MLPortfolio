@@ -1,5 +1,5 @@
 "use client";
-import { useScroll, useTransform, motion, useMotionValueEvent } from "motion/react";
+import { useScroll, useTransform, motion, useMotionValueEvent, useSpring } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
@@ -24,10 +24,16 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     offset: ["start 0.9", "end 0.1"],
   });
 
+  const smoothScrollYProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   const [activeIndex, setActiveIndex] = useState(0);
   const total = data.length;
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  useMotionValueEvent(smoothScrollYProgress, "change", (latest: number) => {
     const breakpoints = data.map((_, index) => index / total);
     const closest = breakpoints.reduce((acc, point, index) => {
       const distance = Math.abs(latest - point);
@@ -39,8 +45,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     setActiveIndex(closest);
   });
 
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  const heightTransform = useTransform(smoothScrollYProgress, [0, 1], [0, height]);
+  const opacityTransform = useTransform(smoothScrollYProgress, [0, 0.1], [0, 1]);
 
   return (
     <div className="w-full bg-white font-sans md:px-10" ref={containerRef}>

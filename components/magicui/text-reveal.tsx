@@ -1,7 +1,7 @@
 "use client"
 
 import { ComponentPropsWithoutRef, FC, ReactNode, useRef } from "react"
-import { motion, MotionValue, useScroll, useTransform } from "motion/react"
+import { motion, MotionValue, useScroll, useTransform, useSpring } from "motion/react"
 
 import { cn } from "@/lib/utils"
 
@@ -14,6 +14,12 @@ export const TextReveal: FC<TextRevealProps> = ({ children, className }) => {
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start 0.9", "end 0.1"],
+  })
+
+  const smoothScrollYProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
   })
 
   if (typeof children !== "string") {
@@ -30,7 +36,7 @@ export const TextReveal: FC<TextRevealProps> = ({ children, className }) => {
             const start = i / words.length
             const end = start + 1 / words.length
             return (
-              <Word key={i} progress={scrollYProgress} range={[start, end]}>
+              <Word key={i} progress={smoothScrollYProgress} range={[start, end]}>
                 {word}
               </Word>
             )

@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import { useScroll, useTransform, motion, MotionValue } from "motion/react";
+import { useScroll, useTransform, useSpring, motion, MotionValue } from "motion/react";
 
 import { cn } from "@/lib/utils";
 
@@ -23,6 +23,11 @@ export const ContainerScroll = ({
   const { scrollYProgress } = useScroll({
     target: containerRef,
   });
+  const smoothScrollYProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
@@ -40,9 +45,9 @@ export const ContainerScroll = ({
     return isMobile ? [0.9, 1] : [1.08, 1];
   };
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [12, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const rotate = useTransform(smoothScrollYProgress, [0, 1], [12, 0]);
+  const scale = useTransform(smoothScrollYProgress, [0, 1], scaleDimensions());
+  const translate = useTransform(smoothScrollYProgress, [0, 1], [0, -120]);
 
   return (
     <div
